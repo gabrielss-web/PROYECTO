@@ -161,10 +161,13 @@ int esBinario(char *cad) {
 
 int esHexadecimal(char *cad) {
     while (*cad) {
-        if ((*cad <= '0' && *cad >= '9') || (*cad <= 'A' && *cad >= 'F')) return 0;
-        cad++;
+        if ((*cad >= '0' && *cad <= '9') || (*cad >= 'A' && *cad <= 'F')) {
+            cad++;
+        } else {
+            return 0; 
+        }
     }
-    return 1;
+    return 1; 
 }
 
 int esOctal(char *cad) {
